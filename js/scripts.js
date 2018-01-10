@@ -31,6 +31,7 @@ function setGameElements() {
         resultsElem.style.display = 'block';
       break;
     case 'ended':
+    	resetGameData();
         newGameBtn.innerText = 'Jeszcze raz';
     case 'notStarted':
     default:
@@ -125,4 +126,11 @@ function checkGameEnd(ifPlayerWin) {
 function endGame() {
     gameState = 'ended';
     setGameElements();
+}
+
+function resetGameData() {
+	playerPickElem.innerHTML = "Player Selection";
+	computerPickElem.innerHTML = "Computer Selection";
+	playerResultElem.innerHTML = "Player Score";
+	computerResultElem.innerHTML = "Computer Score";
 }
